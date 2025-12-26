@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Certification Form</title>
+  <link rel="stylesheet" href="style5.css" />
+</head>
+<body>
+  <header>
+        <h1> professional skill certification tracking </h1>
+        <nav>
+        <a href="project.html">Home</a>
+        <a href="project6.html"> Added Certification</a>
+        <a href="project7.html">UPLOAD</a>
+        <a href="project8.html">Expering Certification</a>
+        </nav>
+    </header>
+    <main>
+    <section class="section-form">
+  <form id="certForm">
+    <label for="certName">Certification Name:</label>
+    <input type="text" id="certName" required />
+
+    <label for="issuer">Issuer:</label>
+    <input type="text" id="issuer" required />
+
+    <label for="issueDate">Issue Date:</label>
+    <input type="date" id="issueDate" required />
+
+    <label for="expiryDate">Expiry Date:</label>
+    <input type="date" id="expiryDate" required />
+
+    <button class="s" type="project6.html">Submit & View Table</button>
+  </form>
+
+ <script>
+document.getElementById("certForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const cert = {
+    name: certName.value,
+    issuer: issuer.value,
+    issueDate: issueDate.value,
+    expiryDate: expiryDate.value
+  };
+
+  let certs = JSON.parse(localStorage.getItem("certList")) || [];
+  certs.push(cert);
+  localStorage.setItem("certList", JSON.stringify(certs));
+
+  alert("Certification Added Successfully!");
+  this.reset();
+  window.location.href = "project6.html";
+});
+const today = new Date().toISOString().split("T")[0];
+document.getElementById("expiryDate").setAttribute("min", today);
+</script>
+    </section>
+    </main>
+
+  <footer>
+        <p> © 2025 Professional Skill Certification Tracker. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

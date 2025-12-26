@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: white;
+}
+
+header {
+  background-color: #007BFF;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #001F3F;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+main {
+  padding: 30px;
+}
+
+h2 {
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+tr.expiring-soon {
+  background-color: #ffeeba;
+}
+body {
+    /* the border is o */
+    border: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   background: linear-gradient(120deg, #f0fdfa, #e0f2fe);
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(90deg, #0f766e, #0ea5e9); 
+    color: #ffffff;
+    /* space inside an box — between its content and border. */
+    padding: 25px 25px;
+    /* aline the items in a row */
+    display: flex;
+    /* evenly space btw items like first t left and last at right */
+    justify-content: space-between;
+    /* aline items vertically center */
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #ffffff;
+    /* space outside the box */
+    margin: 0 20px;
+    /* removes underline */
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d1fae5; 
+    text-decoration: underline;
+}
+section {
+  background: white;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+table tr:hover {
+  background-color: #e0f2fe;
+  cursor: pointer;
+}
+
+

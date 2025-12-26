@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upcoming Expired Certificates</title>
+  <link rel="stylesheet" href="style8.css">
+</head>
+<body>
+  <header>
+    <h1>Certificate Expiry Tracker</h1>
+    <nav>
+        <a href="project.html">Home</a>
+        <a href="project6.html"> Added Certification</a>
+        <a href="project7.html">UPLOAD</a>
+        <a href="project8.html">Expering Certification</a>
+        </nav>
+  </header>
+
+  <main>
+    <h2>Upcoming Expired Certificates</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Certificate Name</th>
+          <th>Holder</th>
+          <th>Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody id="certTableBody"></tbody>
+    </table>
+  </main>
+
+  <footer>
+    &copy; 2025 Certificate Tracker. All rights reserved.
+  </footer>
+
+  <script>
+const tbody = document.getElementById("certTableBody");
+const certs = JSON.parse(localStorage.getItem("certList")) || [];
+const today = new Date();
+
+certs.forEach(c => {
+  const exp = new Date(c.expiryDate);
+  const days = (exp - today) / (1000 * 60 * 60 * 24);
+
+  if (days <= 30 && days >= 0) {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${c.name}</td>
+      <td>${c.issuer}</td>
+      <td>${c.expiryDate}</td>
+    `;
+    tbody.appendChild(row);
+  }
+});
+</script>
+
+
+</body>
+</html>

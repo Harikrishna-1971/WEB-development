@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Certification Table</title>
+  <link rel="stylesheet" href="style6.css" />
+</head>
+<body>
+  <header>
+        <h1> professional skill certification tracking </h1>
+        <nav>
+        <a href="project.html">Home</a>
+        <a href="project6.html"> Added Certification</a>
+        <a href="project7.html">UPLOAD</a>
+        <a href="project8.html">Expering Certification</a>
+        </nav>
+    </header>
+    <main>
+    <section class="added certification">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Issuer</th>
+        <th>Issue Date</th>
+        <th>Expiry Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script>
+const tableBody = document.getElementById("tableBody");
+let certs = JSON.parse(localStorage.getItem("certList")) || [];
+
+function getStatus(expiry) {
+  const today = new Date();
+  const exp = new Date(expiry);
+  const diff = (exp - today) / (1000 * 60 * 60 * 24);
+
+  if (diff < 0) return "Expired";
+  if (diff <= 30) return "Expiring Soon";
+  return "Active";
+}
+
+function loadTable() {
+  tableBody.innerHTML = "";
+
+  certs.forEach((c, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${c.name}</td>
+      <td>${c.issuer}</td>
+      <td>${c.issueDate}</td>
+      <td>${c.expiryDate}</td>
+      <td class="status-${getStatus(c.expiryDate).replace(" ", "")}">
+        ${getStatus(c.expiryDate)}
+      </td>
+      <td>
+        <button onclick="deleteCert(${index})">Delete</button>
+      </td>
+    `;
+    tableBody.appendChild(row);
+  });
+}
+
+function deleteCert(index) {
+  certs.splice(index, 1);
+  localStorage.setItem("certList", JSON.stringify(certs));
+  loadTable();
+}
+
+loadTable();
+</script>
+
+  </section>
+  </main>
+   <footer>
+        <p> © 2025 Professional Skill Certification Tracker. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
