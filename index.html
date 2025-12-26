@@ -3,60 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login-page</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header>
-        <h1>professional skill certification tracking</h1>
-      <nav>
-      </nav>
-    </header>
+     <h1>Online Certification Tracker</h1>
+  <p>Track your professional certifications easily!</p>
 
-    <section class="login">
-        <div class="login-page">
-     <form name="form1" method="post" action="project.html">
-  <h1>LOGIN</h1>
+  <div class="button-container">
+   <nav>
+    <a href="project4.html" class="btn">User Login</a>
+    <a href="project3.html" class="btn">Create account </a>
+    </nav>
+  </div>
 
-  <label>Username:</label>
-  <input type="text" name="username">
-
-  <label>Password:</label>
-  <input type="password" name="password">
-
-  <input type="submit" value="Submit" onclick="return validate(this.form)">
-  <input type="reset" value="Reset">
-</form>
-
-        </div>
-    </section>
-
-    <footer>
-        <p> © 2025 Professional Skill Certification Tracker. All Rights Reserved. </p>
-    </footer>
-   <script>
-function validate(form) {
-  if (form.username.value === "") {
-    alert("Enter username");
-    return false;
-  }
-
-  if (form.password.value === "") {
-    alert("Enter password");
-    return false;
-  }
-
-  if (form.username.value === "admin" && form.password.value === "admin123") {
-    alert("Login successful");
-    return true; // goes to home page
-  } else {
-    alert("Invalid username or password");
-    return false;
-  }
-}
-</script>
-
-    
     
 </body>
 </html>
