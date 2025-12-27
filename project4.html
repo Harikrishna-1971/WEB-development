@@ -45,11 +45,12 @@ function validate(form) {
     alert("Enter password");
     return false;
   }
-
-  if (form.username.value === "admin" && form.password.value === "admin123") {
-    alert("Login successful");
-    return true; // goes to home page
-  } else {
+   if (form.username.value === "admin" && form.password.value === "admin123") {
+  localStorage.setItem("loggedUser", form.username.value);
+  alert("Login successful");
+  return true;
+}
+   else {
     alert("Invalid username or password");
     return false;
   }

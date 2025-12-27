@@ -14,6 +14,7 @@
         <a href="project7.html">UPLOAD</a>
         <a href="project8.html">Expering Certification</a>
         </nav>
+        <div id="userGreeting"></div>
     </header>
     <main>
     <section class="section-form">
@@ -30,7 +31,7 @@
     <label for="expiryDate">Expiry Date:</label>
     <input type="date" id="expiryDate" required />
 
-    <button class="s" type="project6.html">Submit & View Table</button>
+    <button class="s" type="submit">Submit & View Table</button>
   </form>
 
  <script>
@@ -54,7 +55,13 @@ document.getElementById("certForm").addEventListener("submit", function(e) {
 });
 const today = new Date().toISOString().split("T")[0];
 document.getElementById("expiryDate").setAttribute("min", today);
+
+  const user = localStorage.getItem("loggedUser");
+  if (user) {
+    document.getElementById("userGreeting").innerText = "Hello!! " + user;
+  }
 </script>
+
     </section>
     </main>
 

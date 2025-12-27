@@ -97,5 +97,15 @@ table tr:hover {
   background-color: #e0f2fe;
   cursor: pointer;
 }
+#userGreeting {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
 
 

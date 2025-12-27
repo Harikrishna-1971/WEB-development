@@ -124,5 +124,14 @@ footer {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+#userGreeting {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 
 

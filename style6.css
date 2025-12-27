@@ -127,3 +127,14 @@ table tr:hover {
   color: red;
   font-weight: bold;
 }
+#userGreeting {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+

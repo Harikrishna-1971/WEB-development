@@ -14,9 +14,11 @@
         <a href="project7.html">UPLOAD</a>
         <a href="project8.html">Expering Certification</a>
         </nav>
+        <div id="userGreeting"></div>
+
     </header>
     <main>
-    <section class="added certification">
+    <section class="added-certification">
   <table>
     <thead>
       <tr>
@@ -73,6 +75,10 @@ function deleteCert(index) {
 }
 
 loadTable();
+const user = localStorage.getItem("loggedUser");
+  if (user) {
+    document.getElementById("userGreeting").innerText = "Hello!! " + user;
+  }
 </script>
 
   </section>

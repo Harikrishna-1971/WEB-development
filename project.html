@@ -15,6 +15,7 @@
         <a href="project7.html">Upload</a>
         <a href="project8.html">Expering Certification</a>
         </nav>
+        <div id="userGreeting"></div>
     </header>
     <main>
     <section class="main">
@@ -27,6 +28,13 @@
     <footer>
         <p> © 2025 Professional Skill Certification Tracker. All Rights Reserved.</p>
     </footer>
+    <script>
+  const user = localStorage.getItem("loggedUser");
+  if (user) {
+    document.getElementById("userGreeting").innerText = "Hello!! " + user;
+  }
+</script>
+
     
 </body>
 </html>
